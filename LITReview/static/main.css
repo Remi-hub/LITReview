@@ -1,0 +1,7 @@
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(52,81,87,1) 100%, rgba(0,212,255,1) 100%);
+    color: aliceblue;
+    min-height: 100vh;
+}
+
