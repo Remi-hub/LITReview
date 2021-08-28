@@ -8,7 +8,9 @@
   <p><a href="{% url 'logout' %}">Log Out</a></p>
   <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a>
+    <div class="container d-flex min-vh-100 justify-content-center flex-column">
+            <h1 class="text-center">Vous n'êtes pas connecté</h1>
+            <a  class="text-center btn-success col-6 align-self-center" href="{% url 'login' %}">Se connecter</a>
+    </div>
 {% endif %}
 {% endblock %}
