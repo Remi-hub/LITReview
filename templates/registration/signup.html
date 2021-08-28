@@ -3,13 +3,25 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-    <div class="d-flex justify-content-center flex-column ">
-      <h1>Inscrivez-vous</h1>
-          <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button class="btn btn-success" type="submit">Inscrivez-vous</button>
-          <a class="btn btn-success" href="{% url 'login' %}">Retour</a>
-          </form>
+    <div class="container d-flex min-vh-100 justify-content-center flex-column">
+        <div class="row text-center">
+            <h1>Inscrivez-vous</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="fieldWrapper">
+                            {{ field.errors }}
+                            {{ field.label_tag }}: {{ field }}
+                        </div>
+                    {% endfor %}
+                </form>
+                <div class="col">
+                    <a class="btn btn-success" href="{% url 'login' %}">Retour</a>
+                    <button class="btn btn-success" type="submit">Inscrivez-vous</button>
+                </div>
+        </div>
     </div>
+
+
+
 {% endblock %}
