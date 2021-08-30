@@ -1,27 +1,42 @@
 {% extends 'base.html' %}
+{% load django_bootstrap5 %}
 
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-    <div class="container d-flex min-vh-100 justify-content-center flex-column">
-        <div class="row text-center">
-            <h1>Inscrivez-vous</h1>
-                <form method="post">
-                    {% csrf_token %}
-                    {% for field in form %}
-                        <div class="fieldWrapper">
-                            {{ field.errors }}
-                            {{ field.label_tag }}: {{ field }}
-                        </div>
-                    {% endfor %}
-                </form>
-                <div class="col">
-                    <a class="btn btn-success" href="{% url 'login' %}">Retour</a>
-                    <button class="btn btn-success" type="submit">Inscrivez-vous</button>
-                </div>
-        </div>
+    <div class=" w-50" >
+        <h1>Inscrivez-vous</h1>
+            <form method="post">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <a class="btn btn-success" href="{% url 'login' %}">Retour</a>
+                <button class="btn btn-success" type="submit">S'inscrire</button>
+            </form>
     </div>
-
-
-
 {% endblock %}
+
+
+{#{% extends 'base.html' %}#}
+{##}
+{#{% block title %}Sign Up{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <div class="container d-flex min-vh-100 justify-content-center flex-column">#}
+{#        <div class="row text-center">#}
+{#            <h1>Inscrivez-vous</h1>#}
+{#                <form method="post">#}
+{#                    {% csrf_token %}#}
+{#                    {% for field in form %}#}
+{#                        <div class="fieldWrapper">#}
+{#                            {{ field.errors }}#}
+{#                            {{ field.label_tag }}: {{ field }}#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{#                </form>#}
+{#                <div class="col">#}
+{#                    <a class="btn btn-success" href="{% url 'login' %}">Retour</a>#}
+{#                    <button class="btn btn-success" type="submit">Inscrivez-vous</button>#}
+{#                </div>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock %}#}

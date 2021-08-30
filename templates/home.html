@@ -4,11 +4,11 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
-  <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+  Bonjour {{ user.username }} !
+  <p><a class="btn-success" href="{% url 'logout' %}">Se déconnecter</a></p>
+  <p><a class="btn-success" href="{% url 'password_reset' %}">Réinitialisation du mot de passe</a></p>
 {% else %}
-    <div class="container d-flex min-vh-100 justify-content-center flex-column">
+    <div>
             <h1 class="text-center">Vous n'êtes pas connecté</h1>
             <a  class="text-center btn-success col-6 align-self-center" href="{% url 'login' %}">Se connecter</a>
     </div>
