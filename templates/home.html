@@ -4,9 +4,9 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  Bonjour {{ user.username }} !
-  <p><a class="btn-success" href="{% url 'logout' %}">Se déconnecter</a></p>
-  <p><a class="btn-success" href="{% url 'password_reset' %}">Réinitialisation du mot de passe</a></p>
+  <h1>Bonjour {{ user.username }} !</h1>
+  <p><a class="btn btn-success" href="{% url 'logout' %}">Se déconnecter</a></p>
+  <p><a class="btn btn-success" href="{% url 'password_reset' %}">Réinitialisation du mot de passe</a></p>
 {% else %}
     <div>
             <h1 class="text-center">Vous n'êtes pas connecté</h1>
