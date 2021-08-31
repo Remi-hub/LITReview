@@ -2,13 +2,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-
   <meta charset="utf-8">
   <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'main.css' %}">
 </head>
 <body>
+<nav class="navbar  navbar-expand-lg navbar-light bg-light ">
+  <div class="align-content-center container-fluid">
+    <a class="navbar-brand" href="#">LITReview</a>
+    <div class=" align-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Flux</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Abonnements</a>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Se déconnecter</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
   <main class="container d-flex min-vh-100 justify-content-center flex-column" >
     {% block content %}
     {% endblock %}
