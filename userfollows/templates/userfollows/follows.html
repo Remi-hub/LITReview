@@ -10,28 +10,37 @@
             <form method="post"  enctype="multipart/form-data">
                 {% csrf_token %}
                 {% bootstrap_form form %}
+                {{ form.media }}
                     <button  type="submit" class="btn btn-success text-end">Envoyer</button>
             </form>
         </div>
 
-        <div>
+
         <h2 class="text-center m-md-5" >Abonnements</h2>
+        <div class=" w-100" >
             <form method="post"  enctype="multipart/form-data">
                 {% csrf_token %}
+                <ul class="list-group">{% for user_follow in user_follows %}
+                    <li class="list-group-item d-flex justify-content-between" >{{ user_follow.followed_user }}
+                        <button type="submit" class="btn btn-success text-end list-group-item align-content-end">Désabonner</button>
+                    </li>
+                </ul>
 
-                    <button  type="submit" class="btn btn-success text-end">Envoyer</button>
+                {% endfor %}
+
+
             </form>
         </div>
-
         <div>
-
         <h2 class="text-center m-md-5" >Abonnés</h2>
             <form method="post"  enctype="multipart/form-data">
                 {% csrf_token %}
-
-                    <button  type="submit" class="btn btn-success text-end">Envoyer</button>
+            <ul class="list-group" >{% for follower in followers %}
+                    <li class="list-group-item" >{{ follower.user }}</li>
+                    {% endfor %}
+            </ul>
             </form>
         </div>
-
-
 {% endblock %}
+
+
