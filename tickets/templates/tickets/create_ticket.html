@@ -5,20 +5,12 @@
 
 
 {% block content %}
-    {% if user.is_authenticated %}
         <div>
         <h1 class="text-center m-md-5" >Créer un ticket </h1>
-            <form method="post">
+            <form method="post"  enctype="multipart/form-data">
                 {% csrf_token %}
                 {% bootstrap_form form %}
                     <button  type="submit" class="btn btn-success text-end">Envoyer</button>
             </form>
         </div>
-
-{% else %}
-    <div>
-            <h1 class="text-center">Vous n'êtes pas connecté</h1>
-            <a  class="text-center btn-success col-6 align-self-center" href="{% url 'login' %}">Se connecter</a>
-    </div>
-{% endif %}
 {% endblock %}
