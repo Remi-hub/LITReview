@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block title %}Abonnements{% endblock %}
+
+{% block content %}
+
+        <div>
+        <h1 class="text-center m-md-5" >Suivre d'autres utilisateurs</h1>
+            <form method="post"  enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                    <button  type="submit" class="btn btn-success text-end">Envoyer</button>
+            </form>
+        </div>
+
+        <div>
+        <h2 class="text-center m-md-5" >Abonnements</h2>
+            <form method="post"  enctype="multipart/form-data">
+                {% csrf_token %}
+
+                    <button  type="submit" class="btn btn-success text-end">Envoyer</button>
+            </form>
+        </div>
+
+        <div>
+
+        <h2 class="text-center m-md-5" >Abonnés</h2>
+            <form method="post"  enctype="multipart/form-data">
+                {% csrf_token %}
+
+                    <button  type="submit" class="btn btn-success text-end">Envoyer</button>
+            </form>
+        </div>
+
+
+{% endblock %}
