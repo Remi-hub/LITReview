@@ -7,6 +7,11 @@
   <h1>Bonjour {{ user.username }} !</h1>
   <p><a class="btn btn-success" href="{% url 'logout' %}">Se déconnecter</a></p>
   <p><a class="btn btn-success" href="{% url 'password_reset' %}">Réinitialisation du mot de passe</a></p>
+  <p><a class="btn btn-success" href="{% url 'create_ticket' %}">Demander une critique</a></p>
+  <p><a class="btn btn-success" href="{% url 'create_reviews' %}">Créer une critique</a></p>
+  <div>
+
+  </div>
 {% else %}
     <div>
             <h1 class="text-center">Vous n'êtes pas connecté</h1>
