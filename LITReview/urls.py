@@ -24,5 +24,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('flux/', TemplateView.as_view(template_name='flux.html'), name='flux'),
     path('tickets/', include('tickets.urls')),
-    path('userfollows/', include('userfollows.urls'))
+    path('userfollows/', include('userfollows.urls')),
+    path('reviews/', include('reviews.urls'))
 ]
