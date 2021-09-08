@@ -22,7 +22,8 @@
                 {% csrf_token %}
                 <ul class="list-group">{% for user_follow in user_follows %}
                     <li class="list-group-item d-flex justify-content-between" >{{ user_follow.followed_user }}
-                        <button type="submit" class="btn btn-success text-end list-group-item align-content-end">Désabonner</button>
+                        <button type="submit"
+                                class="btn btn-success text-end list-group-item align-content-end">Désabonner</button>
                     </li>
                 </ul>
 
