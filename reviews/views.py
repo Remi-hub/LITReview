@@ -40,7 +40,7 @@ def review_create_view(request):
         context = {
             'form_review': form_review, 'form_ticket': form_ticket
         }
-        
+
         if form_review.is_valid() and form_ticket.is_valid():
             form_ticket.instance.user = request.user
             ticket = form_ticket.save()
