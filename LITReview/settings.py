@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'tickets',
     'accounts',
     "django_bootstrap5",
+    'flux',
 ]
 
 MIDDLEWARE = [

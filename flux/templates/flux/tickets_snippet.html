@@ -1,0 +1,13 @@
+<div class="card text-white bg-dark mb-3 m-auto border-light">
+    <div class="card-header"><p class="fs-3 my-0">{{ ticket.user }} a demandé une critique</p> <br/> <p class="my-0 fst-italic"> le {{ ticket.time_created }}</p></div>
+    <div class="card-body">
+        <h5 class="card-title">{{ ticket.title }}</h5>
+        <div class="clearfix">
+            {% if ticket.image %}
+                <img class="float-lg-start" src="{{ ticket.image.url }}" alt="couverture de live">
+            {% endif %}
+            <p class="card-text text-start ">{{ ticket.description }}</p>
+        </div>
+        <p><a class="btn btn-success btn-sm m-0 mt-sm-5" href="{% url 'create_ticket' %}">Demander une critique</a></p>
+    </div>
+</div>
