@@ -1,7 +1,8 @@
 body{
-    background: rgb(2,0,36);
-    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(52,81,87,1) 100%, rgba(0,212,255,1) 100%);
-    min-height: 100vh;
+    background: #093028;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2B4E3A, #22373C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2B4E3A, #22373C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 h1{
@@ -15,3 +16,24 @@ h2{
 label{
     color: aliceblue;
 }
+
+p{
+    color: aliceblue;
+}
+
+.btn{
+    margin-bottom: 2rem;
+}
+
+img {
+  display: block;
+  max-width:460px;
+  max-height:200px;
+  width: auto;
+  height: auto;
+  margin-right: 20px;
+}
+
+
+
+/**/
