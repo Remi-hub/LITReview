@@ -2,7 +2,7 @@ from django.contrib.auth.forms import UserCreationForm as BaseUserCreationForm, 
 from django.contrib.auth.models import User
 from django.forms import ModelForm
 from dal import autocomplete
-from django import forms
+
 
 from userfollows.models import Userfollow
 
