@@ -34,8 +34,9 @@ def review_create_view(request):
         return render(request, html, context)
 
     elif request.method == 'POST':
-        form_review = ReviewForm(data=request.POST)
-        form_ticket = TicketForm(data=request.POST)
+        form_review = ReviewForm(data=request.POST, files=request.FILES)
+        form_ticket = TicketForm(data=request.POST, files=request.FILES)
+
         html = 'reviews/create_reviews.html'
         context = {
             'form_review': form_review, 'form_ticket': form_ticket

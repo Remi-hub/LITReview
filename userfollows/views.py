@@ -25,6 +25,23 @@ class FollowsView(LoginRequiredMixin, generic.CreateView):
         return context
 
 
+    #
+    # def get_form_kwargs(self):
+    #     form = super().get_form_kwargs()
+    #
+
+    # def follow(self):
+    #     current_user = self.request.user
+    #     user_followers = Userfollow.objects.filter()
+    #     if current_user.followers
+    #
+    #     pass
+
+    # le current user doit pouvoir suivre la personne qu'il a cibler
+    # if user is not in  related_name = following
+    # -> user.add() -> following
+
+
 
 
 class UserAutocomplete(autocomplete.Select2QuerySetView):
@@ -36,6 +53,6 @@ class UserAutocomplete(autocomplete.Select2QuerySetView):
         qs = User.objects.all()
 
         if self.q:
-            qs = qs.filter(name__istartswith=self.q)
+            qs = qs.filter(username__istartswith=self.q)
 
         return qs
