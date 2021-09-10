@@ -19,6 +19,8 @@ from django.views.generic.base import TemplateView
 from tickets.views import CreateTicket
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.generic.base import RedirectView
+from .views import redirect_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +29,6 @@ urlpatterns = [
     path('flux/', include('flux.urls')),
     path('tickets/', include('tickets.urls')),
     path('userfollows/', include('userfollows.urls')),
-    path('reviews/', include('reviews.urls'))
+    path('reviews/', include('reviews.urls')),
+    path('', redirect_view)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
