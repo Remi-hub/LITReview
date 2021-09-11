@@ -34,6 +34,12 @@ img {
   margin-right: 20px;
 }
 
+#id_rating{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 
 
 /**/
