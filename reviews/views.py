@@ -9,21 +9,8 @@ from tickets.views import CreateTicket
 from tickets.models import Ticket
 from django.shortcuts import get_object_or_404
 
+
 # Create your views here.
-
-
-# class ReviewsView(LoginRequiredMixin, generic.CreateView):
-#
-#     model = Review
-#     template_name = 'reviews/create_reviews.html'
-#     fields = ['headline', 'body', 'rating']
-#     success_url = reverse_lazy('flux')
-
-# class ReviewsView(LoginRequiredMixin, generic.CreateView):
-#     model = Review,
-#     form_class = ReviewForm
-#     template_name = 'reviews/create_reviews.html'
-
 
 def review_create_view(request):
     if request.method == 'GET':
@@ -64,7 +51,7 @@ def review_create_view_with_ticket(request, ticket_id):
         ticket = get_object_or_404(Ticket, id=ticket_id)
         html = 'reviews/create_review_with_ticket.html'
         context = {
-            'form_review': form_review, 'ticket': ticket
+            'form_review': form_review, 'ticket': ticket,
         }
         return render(request, html, context)
 
@@ -81,4 +68,5 @@ def review_create_view_with_ticket(request, ticket_id):
             return redirect('flux')
 
         return render(request, html, context)
+
 

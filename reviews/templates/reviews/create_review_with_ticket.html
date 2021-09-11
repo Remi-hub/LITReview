@@ -3,17 +3,15 @@
 {% block title %}Répondre à un ticket{% endblock %}
 
 {% block content %}
+    <div>
+        <h1 class="text-center m-md-5" >Créer une critique </h1>
+        {% include "flux/tickets_snippet.html" %}
+        <form method="post"  enctype="multipart/form-data">
+            {% csrf_token %}
+                <h2 class="mt-5 mb-3">Ma critique</h2>
+                {% bootstrap_form form_review %}
 
-{% include "flux/tickets_snippet.html" %}
-
-<div>
-    <h1 class="text-center m-md-5" >Critique </h1>
-    <h2>Livre / article</h2>
-    <form method="post"  enctype="multipart/form-data">
-        {% csrf_token %}
-        <h2>Critique</h2>
-        {% bootstrap_form form_review %}
-        <button  type="submit" class="btn btn-success text-end">Envoyer</button>
-    </form>
-</div>
+                <button  type="submit" class="btn btn-success text-end">Envoyer</button>
+        </form>
+    </div>
 {% endblock %}

@@ -3,7 +3,7 @@ from django.forms import ModelForm
 from django.urls import reverse_lazy
 from django.views import generic
 
-from reviews.models import Review
+
 from tickets.models import Ticket
 
 
