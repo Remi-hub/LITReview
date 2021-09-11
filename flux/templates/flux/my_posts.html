@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Flux{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {#reviews#}
+        <div class="row">
+        <div class="col-7 mt-5">
+            <div class="text-center">
+                <h2>Mes dernières critiques</h2>
+                {% for review in reviews %}
+                    {% include "flux/reviews_snippet.html"  %}
+                {% empty %}
+                    <div class="card text-white bg-dark mb-3 m-auto border-light">
+                        <div class="card-header"><p class="fs-3 my-0">Vous n'avez pas encore publié de critique !</p></div>
+                        <div class="card-body">
+                            <div class="clearfix">
+                                <p>N'hésitez pas à vous lancer dans votre première critique</p>
+                                <p><a class="btn btn-success w-25 mt-3" href="{% url 'create_reviews' %}">ici !</a></p>
+                            </div>
+                            {#        <p><a class="btn btn-success btn-sm m-0 mt-sm-5" href="{% url 'create_ticket' %}">Demander une critique</a></p>#}
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+
+        <div class="col-1"></div>
+
+        {#Ticket #}
+        <div class="col-4 mt-5">
+        <div class="text-center">
+            <h2>Mes derniers tickets</h2>
+            {% for ticket in tickets %}
+                {% include "flux/tickets_snippet.html"  %}
+            {% empty %}
+                <div class="card text-white bg-dark mb-3 m-auto border-light">
+                <div class="card-header"><p class="fs-3 my-0">Vous n'avez pas encore publié de ticket !</p></div>
+                <div class="card-body">
+                <div class="clearfix">
+                    <p>N'hésitez pas à créer votre premier ticket</p>
+                    <p><a class="btn btn-success w-25 mt-3" href="{% url 'create_ticket' %}">ici !</a></p>
+                </div>
+            {% endfor %}
+            </div>
+            </div>
+        </div>
+
+    {% else %}
+        <div>
+            <h1 class="text-center">Vous n'êtes pas connecté</h1>
+            <a  class="text-center btn-success col-6 align-self-center" href="{% url 'login' %}">Se connecter</a>
+        </div>
+    {% endif %}
+{% endblock %}
