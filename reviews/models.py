@@ -24,7 +24,7 @@ class Review(models.Model):
         verbose_name='Note',
         # validates that rating must be between 0 and 5
         validators=[MinValueValidator(0), MaxValueValidator(5)],
-        choices=STAR_CHOICES,
+        choices=STAR_CHOICES, default=1
     )
     headline = models.CharField(verbose_name='Titre de la critique', max_length=128)
     body = models.TextField(verbose_name='Commentaire', max_length=8192, blank=True)
