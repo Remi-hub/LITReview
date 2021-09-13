@@ -28,6 +28,7 @@
                             <div class="card-header"><p class="fs-3 my-0">{{ ticket.user }} a demandé une critique</p> <br/> <p class="my-0 fst-italic"> le {{ ticket.time_created }}</p></div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ ticket.title }}</h5>
+
                                 <div class="clearfix">
                                     {% if ticket.image %}
                                         <img class="float-lg-start" src="{{ ticket.image.url }}" alt="couverture de live">

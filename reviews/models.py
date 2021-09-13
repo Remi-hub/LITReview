@@ -22,8 +22,6 @@ class Review(models.Model):
     ticket = models.ForeignKey(to=Ticket, on_delete=models.CASCADE)
     rating = models.PositiveSmallIntegerField(
         verbose_name='Note',
-        # validates that rating must be between 0 and 5
-        validators=[MinValueValidator(0), MaxValueValidator(5)],
         choices=STAR_CHOICES, default=1
     )
     headline = models.CharField(verbose_name='Titre de la critique', max_length=128)
@@ -31,4 +29,5 @@ class Review(models.Model):
     user = models.ForeignKey(
         to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     time_created = models.DateTimeField(auto_now_add=True)
+
 
