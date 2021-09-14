@@ -1,10 +1,8 @@
 {% extends 'base.html' %}
-
-
 {% block title %}Flux{% endblock %}
-
 {% block content %}
     {% if user.is_authenticated %}
+        {#        reviews#}
         <div class="row">
             <div class="col-7 mt-5">
                 <div class="text-center">
@@ -15,31 +13,14 @@
                     {% endfor %}
                 </div>
             </div>
-
             <div class="col-1"></div>
-
             {#Ticket #}
             <div class="col-4 mt-5">
                 <div class="text-center">
                     <p class="mt-5"><a class="btn btn-success btn-lg" href="{% url 'create_ticket' %}">Demander une critique</a></p>
                     <h2>Les derniers tickets</h2>
                     {% for ticket in tickets %}
-                        <div class="card text-white bg-dark mb-3 m-auto border-light">
-                            <div class="card-header"><p class="fs-3 my-0">{{ ticket.user }} a demandé une critique</p> <br/> <p class="my-0 fst-italic"> le {{ ticket.time_created }}</p></div>
-                            <div class="card-body">
-                                <h5 class="card-title">{{ ticket.title }}</h5>
-
-                                <div class="clearfix">
-                                    {% if ticket.image %}
-                                        <img class="float-lg-start" src="{{ ticket.image.url }}" alt="couverture de live">
-                                    {% endif %}
-                                    <p class="card-text text-start ">{{ ticket.description }}</p>
-
-                                </div>
-                                <p><a class="btn btn-success btn-sm m-0 mt-sm-5" href="{% url 'create_review_with_ticket' ticket.id %}">Proposer une critique</a></p>
-
-                            </div>
-                        </div>
+                        {% include 'flux/tickets_snippet.html' %}
                     {% endfor %}
                 </div>
             </div>

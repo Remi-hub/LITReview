@@ -19,7 +19,7 @@ STAR_CHOICES = (
 
 class Review(models.Model):
 
-    ticket = models.ForeignKey(to=Ticket, on_delete=models.CASCADE)
+    ticket = models.ForeignKey(to=Ticket, on_delete=models.CASCADE, related_name='reviews')
     rating = models.PositiveSmallIntegerField(
         verbose_name='Note',
         choices=STAR_CHOICES, default=1

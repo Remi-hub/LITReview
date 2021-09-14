@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block title %}Supprimer le ticket{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <form method="post">{% csrf_token %}
+            <div class="d-flex flex-column">
+                <p>Êtes vous sur de vouloir supprimer votre ticket concernant "{{ object.title }}"?</p>
+                <div class="d-flex justify-content-between ">
+                    <div>
+                        <a class="btn btn-success " href="{% url 'flux' %}">Annuler</a>
+                        <input class="btn btn-danger" type="submit" value="Confirmer">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

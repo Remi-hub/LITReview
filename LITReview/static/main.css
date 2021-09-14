@@ -42,6 +42,7 @@ img {
     justify-content: space-between;
 }
 
-
-
+.checked {
+  color: orange;
+}
 /**/

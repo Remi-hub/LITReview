@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block title %}Modifier une critique{% endblock %}
+
+
+{% block content %}
+        <div>
+        <h1 class="text-center m-md-5" >Modifier une critique </h1>
+            <h2>Livre / article</h2>
+
+            {% include 'flux/tickets_snippet.html' %}
+
+
+            <form method="post"  enctype="multipart/form-data">
+                {% csrf_token %}
+            <h2>Critique</h2>
+                {% bootstrap_form form_review %}
+
+                    <button  type="submit" class="btn btn-success text-end">Envoyer</button>
+            </form>
+        </div>
+{% endblock %}
+

@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 {% load django_bootstrap5 %}
 
-{% block title %}Créer un ticket{% endblock %}
+{% block title %}Modifier ticket{% endblock %}
+
+
 {% block content %}
     <div>
-        <h1 class="text-center m-md-5" >Créer un ticket </h1>
+        <h1 class="text-center m-md-5" >Modifier ticket</h1>
         <form method="post"  enctype="multipart/form-data">
             {% csrf_token %}
             {% bootstrap_form form %}
             <button  type="submit" class="btn btn-success text-end">Envoyer</button>
+
         </form>
     </div>
 {% endblock %}
