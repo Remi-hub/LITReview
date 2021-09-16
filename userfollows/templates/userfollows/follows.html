@@ -8,25 +8,27 @@
         <h1 class="text-center m-md-5" >Suivre d'autres utilisateurs</h1>
         <form method="post"  enctype="multipart/form-data">
             {% csrf_token %}
-            {% bootstrap_form form %}
-            {{ form.media }}
+            {% bootstrap_form form_follows %}
+            {{ form_follows.media }}
             <button  type="submit" class="btn btn-success text-end">Envoyer</button>
         </form>
     </div>
 
     <h2 class="text-center m-md-5" >Abonnements</h2>
     <div class=" w-100" >
-        <form method="post"  enctype="multipart/form-data">
-            {% csrf_token %}
-            <ul class="list-group">{% for user_follow in user_follows %}
+        <ul class="list-group">
+            {% for user_follow in user_follows %}
                 <li class="list-group-item d-flex justify-content-between" >{{ user_follow.followed_user }}
-                    <button type="submit"
-                            class="btn btn-success text-end list-group-item align-content-end">Désabonner</button>
+                    <form method="post" action={% url 'unfollows' %}>
+                        <input type="hidden" name="followed_id" value="{{ user_follow.followed_user.id }}">
+                        {% csrf_token %}
+                        <button type="submit"
+                                class="btn btn-success text-end list-group-item align-content-end">Désabonner</button>
+                    </form>
                 </li>
             {% endfor %}
-            </ul>
+        </ul>
 
-        </form>
     </div>
     <div>
         <h2 class="text-center m-md-5" >Abonnés</h2>
