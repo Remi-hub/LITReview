@@ -63,7 +63,7 @@ def unfollow_view(request):
             followed_user_id = form_unfollow.cleaned_data['followed_user']
             followed_user = get_object_or_404(User, id=followed_user_id)
             Userfollow.objects.get()
-           
+
 
 
 
