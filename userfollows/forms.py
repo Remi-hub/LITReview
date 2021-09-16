@@ -1,25 +1,13 @@
 from django.contrib.auth.forms import UserCreationForm as BaseUserCreationForm, UsernameField
 from django.contrib.auth.models import User
-from django.forms import ModelForm
+from django.forms import ModelForm, Form, IntegerField
 from dal import autocomplete
 
 
 from userfollows.models import Userfollow
 
 
-
-
 class UserfollowForm(ModelForm):
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     self.fields['followed_user'].queryset = User.objects.exclude(following=True) # not follow yet
-
-
-    # changer les fields de followed_user,
-    # ne pas afficher les gens deja followed
-
-
-
     class Meta:
         model = Userfollow
         fields = ('followed_user',)
@@ -29,5 +17,7 @@ class UserfollowForm(ModelForm):
         }
 
 
+class UnfollowForm(Form):
+    followed_user = IntegerField()
 
 
