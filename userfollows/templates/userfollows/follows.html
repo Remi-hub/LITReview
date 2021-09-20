@@ -20,7 +20,7 @@
             {% for user_follow in user_follows %}
                 <li class="list-group-item d-flex justify-content-between" >{{ user_follow.followed_user }}
                     <form method="post" action={% url 'unfollows' %}>
-                        <input type="hidden" name="followed_id" value="{{ user_follow.followed_user.id }}">
+                        <input type="hidden" name="followed_user" value="{{ user_follow.followed_user.id }}">
                         {% csrf_token %}
                         <button type="submit"
                                 class="btn btn-success text-end list-group-item align-content-end">Désabonner</button>

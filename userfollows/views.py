@@ -8,23 +8,6 @@ from userfollows.models import Userfollow
 
 
 # Create your views here.
-
-
-# class FollowsView(LoginRequiredMixin, generic.CreateView):
-#     model = Userfollow
-#     form_class = UserfollowForm
-#     template_name = 'userfollows/follows.html'
-#
-#     def get_context_data(self, **kwargs):
-#         # using super() to acces method (get_context_data) from CreateView
-#         context = super().get_context_data(**kwargs)
-#         current_user = self.request.user
-#         # filter (row=...)
-#         context['user_follows'] = Userfollow.objects.filter(user=current_user)
-#         context['followers'] = Userfollow.objects.filter(followed_user=current_user)
-#         return context
-
-
 def follow_view(request):
     if request.method == 'GET':
         form_follows = UserfollowForm
@@ -60,18 +43,15 @@ def unfollow_view(request):
     if request.method == 'POST':
         form_unfollow = UnfollowForm(data=request.POST)
         if form_unfollow.is_valid():
+            # get followed id from form
             followed_user_id = form_unfollow.cleaned_data['followed_user']
+            # get instance of user matching id from the form
             followed_user = get_object_or_404(User, id=followed_user_id)
-            Userfollow.objects.get()
-
-
-
-
-
-
-    # 1) determiner la personne a unfollow
-    # 2) le userfollow a supprimer
-    # 3) rediriger l'user sur la meme page (refresh)
+            # finding the user follow that matches followed_user and user
+            user_follows = Userfollow.objects.filter(followed_user=followed_user).filter(user=request.user).first()
+            if user_follows:
+                user_follows.delete()
+    return redirect('follows')
 
 
 class UserAutocomplete(autocomplete.Select2QuerySetView):
