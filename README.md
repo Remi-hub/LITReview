@@ -3,7 +3,7 @@
 
 ## Créer l'environnement virtuel
 Placez vous dans le dossier LITReview et tapez :
-`venv/scripts/activate`  
+`python -m venv venv`  
 
 ## Activer l'environnement virtuel
 
