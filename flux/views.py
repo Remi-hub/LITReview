@@ -4,14 +4,14 @@ from django.shortcuts import render
 from reviews.models import Review
 from tickets.models import Ticket
 from userfollows.models import Userfollow
+from django.contrib.auth.decorators import login_required
 
 
-# Create your views here.
+@login_required(login_url='/accounts/login/')
 def events_view(request):
     html = 'flux/flux.html'
     # user = follower
-    followed_users = list(Userfollow.objects
-                          .filter(user=request.user).
+    followed_users = list(Userfollow.objects.filter(user=request.user).
                           values_list('followed_user__id', flat=True))
     followed_users.append(request.user.id)
     context = {
@@ -34,3 +34,7 @@ def personal_events_view(request):
     }
 
     return render(request, html, context)
+
+
+
+
