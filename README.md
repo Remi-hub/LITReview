@@ -7,7 +7,7 @@ Placez vous dans le dossier LITReview et tapez :
 
 ## Activer l'environnement virtuel
 
-Sous Windows, ouvrez votre shell, placez vous dans le dossier LITReview et tapez : 
+Tapez ensuite : 
 `venv/scripts/activate`  
 
 Sous Linux, ouvrez votre shell, placez vous dans le dossier LITReview et tapez : 
