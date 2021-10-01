@@ -7,5 +7,6 @@ from .views import UserAutocomplete
 urlpatterns = [
     path('unfollows/', unfollow_view, name="unfollows"),
     path('follows/', follow_view, name='follows'),
-    path('user_autocomplete/', UserAutocomplete.as_view(), name='user-autocomplete')
+    path('user_autocomplete/', UserAutocomplete.as_view(),
+         name='user-autocomplete')
 ]

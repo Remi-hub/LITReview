@@ -20,7 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ez)&a4vh_b-!@nm+7o3rq(c!=&2(aszfu5nv_iao+3jo&jl8)g'
+SECRET_KEY = 'django-insecure-ez)&a4vh_b-!' \
+             '@nm+7o3rq(c!=&2(aszfu5nv_iao+3jo&jl8)g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -62,8 +63,7 @@ ROOT_URLCONF = 'LITReview.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [str(BASE_DIR.joinpath('templates'))]
-        ,
+        'DIRS': [str(BASE_DIR.joinpath('templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -95,16 +95,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation'
+                '.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation'
+                '.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation'
+                '.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation'
+                '.NumericPasswordValidator',
     },
 ]
 
@@ -146,5 +150,3 @@ EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
 
 MEDIA_ROOT = BASE_DIR / 'LITReview'/'media'
 MEDIA_URL = '/media/'
-
-

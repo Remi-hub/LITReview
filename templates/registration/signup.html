@@ -6,11 +6,11 @@
 {% block content %}
     <div class=" w-50" >
         <h1>Inscrivez-vous</h1>
-            <form method="post">
-                {% csrf_token %}
-                {% bootstrap_form form %}
-                <a class="btn btn-success" href="{% url 'login' %}">Retour</a>
-                <button class="btn btn-success" type="submit">S'inscrire</button>
-            </form>
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <a class="btn btn-success" href="{% url 'login' %}">Retour</a>
+            <button class="btn btn-success" type="submit">S'inscrire</button>
+        </form>
     </div>
 {% endblock %}

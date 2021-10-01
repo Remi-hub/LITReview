@@ -1,4 +1,5 @@
-from django.contrib.auth.forms import UserCreationForm as BaseUserCreationForm, UsernameField
+from django.contrib.auth.forms import UserCreationForm as\
+    BaseUserCreationForm, UsernameField
 from django.contrib.auth.models import User
 
 

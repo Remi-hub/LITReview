@@ -1,5 +1,3 @@
-from django.contrib.auth.forms import UserCreationForm as BaseUserCreationForm, UsernameField
-from django.contrib.auth.models import User
 from django.forms import ModelForm, Form, IntegerField
 from dal import autocomplete
 
@@ -19,5 +17,3 @@ class UserfollowForm(ModelForm):
 
 class UnfollowForm(Form):
     followed_user = IntegerField()
-
-

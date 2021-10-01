@@ -1,23 +1,28 @@
 <div class="card text-white bg-dark mb-3 m-auto border-light ">
     <div class="card-header"><p class="fs-3 my-0">{{ ticket.user }} a demandé une critique</p> <br/> <p class="my-0 fst-italic"> le {{ ticket.time_created }}</p></div>
     <div class="card-body">
-        <h5 class="card-title">{{ ticket.title }}</h5>
-        <div class="clearfix">
+        <h5 class="card-title d-flex justify-content-center">{{ ticket.title }}</h5>
+        <div class="d-flex">
             {% if ticket.image %}
-                <img class="float-lg-start" src="{{ ticket.image.url }}" alt="couverture de live">
             {% endif %}
-            <p class="card-text text-start h-50">{{ ticket.description }}</p>
-            <div class="d-flex justify-content-end d-inline mt-4">
-                {% if ticket.user.id == user.id %}
-                    <p><a class="btn btn-danger btn-sm m-0 m-lg-2" href="{% url 'delete_ticket' ticket.id %}">Supprimer</a></p>
-                    <p><a class="btn btn-success btn-sm m-0 m-lg-2 " href="{% url 'edit_ticket' ticket.id %}">Modifier</a></p>
+            <div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="{{ ticket.image.url }}" alt="couverture de live">
 
-                {% endif %}
-                {% if ticket.has_review %}
-                    <p><a class="btn btn-success btn-sm m-0   m-lg-2" href="#{{ ticket.id }}">Voir la critique</a></p>
-                {% else %}
-                    <p><a class="btn btn-success btn-sm m-0   m-lg-2" href="{% url 'create_review_with_ticket' ticket.id %}">Proposer une critique</a></p>
-                {% endif %}
+                </div>
+            <p>{{ ticket.description }}</p>
+                <div class="d-flex justify-content-center align-items-center">
+                    {% if ticket.user.id == user.id %}
+                        <p><a class="btn btn-danger btn-sm m-0 m-lg-2" href="{% url 'delete_ticket' ticket.id %}">Supprimer</a></p>
+                        <p><a class="btn btn-success btn-sm m-0 m-lg-2 " href="{% url 'edit_ticket' ticket.id %}">Modifier</a></p>
+
+                    {% endif %}
+                    {% if ticket.has_review %}
+                        <p><a class="btn btn-success btn-sm m-0   m-lg-2" href="#{{ ticket.id }}">Voir la critique</a></p>
+                    {% else %}
+                        <p><a class="btn btn-success btn-sm m-0   m-lg-2" href="{% url 'create_review_with_ticket' ticket.id %}">Proposer une critique</a></p>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>

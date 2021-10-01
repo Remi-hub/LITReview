@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views import generic
+
 from tickets.forms import TicketForm
 from tickets.models import Ticket
 
@@ -34,15 +35,3 @@ class DeleteTicket(LoginRequiredMixin, generic.DeleteView):
     model = Ticket
     success_url = reverse_lazy('flux')
     template_name = 'tickets/delete.html'
-
-
-
-
-
-
-
-
-
-
-
-
