@@ -36,3 +36,28 @@ Pour vous rendre sur le site, ouvrez un navigateur et dans l'url saisissez :
 
 ###  Création d'un utilisateur 
 Pour créer un simple utilisateur suivez les instructions sur la page de connexion.
+
+### Détail de connexion
+
+admin :
+login : admin
+password : password123
+
+users:
+login : Alexis
+password : passwordtoto
+
+login : Robert
+password : passwordtoto
+
+login : Jeanne
+password : passwordtoto
+
+login : Mireille
+password : passwordtoto
+
+login : Paul
+password : passwordtoto
+
+
+
