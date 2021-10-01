@@ -42,23 +42,29 @@ Pour créer un simple utilisateur suivez les instructions sur la page de connexi
 #### admin :
 
 login : admin
+
 password : password123
 
 #### users:
 
 login : Alexis
+
 password : passwordtoto
 
 login : Robert
+
 password : passwordtoto
 
 login : Jeanne
+
 password : passwordtoto
 
 login : Mireille
+
 password : passwordtoto
 
 login : Paul
+
 password : passwordtoto
 
 
