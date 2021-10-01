@@ -1,9 +1,13 @@
 # LITReview
 #### LITReview est site qui permet a leurs utilisateur de poster ou de demander des critiques pour des livres.
 
+## Créer l'environnement virtuel
+Placez vous dans le dossier LITReview et tapez :
+`python -m venv venv`  
+
 ## Activer l'environnement virtuel
 
-Sous Windows, ouvrez votre shell, placez vous dans le dossier LITReview et tapez : 
+Tapez ensuite : 
 `venv/scripts/activate`  
 
 Sous Linux, ouvrez votre shell, placez vous dans le dossier LITReview et tapez : 
