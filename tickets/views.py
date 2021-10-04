@@ -30,8 +30,14 @@ class EditTicket(LoginRequiredMixin, generic.UpdateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
+    def get_queryset(self):
+        return Ticket.objects.filter(user=self.request.user)
+
 
 class DeleteTicket(LoginRequiredMixin, generic.DeleteView):
     model = Ticket
     success_url = reverse_lazy('flux')
     template_name = 'tickets/delete.html'
+
+    def get_queryset(self):
+        return Ticket.objects.filter(user=self.request.user)

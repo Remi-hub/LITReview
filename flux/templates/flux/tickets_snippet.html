@@ -7,8 +7,9 @@
             {% endif %}
             <div>
                 <div class="d-flex justify-content-center align-items-center">
+                     {% if ticket.image %}
                     <img src="{{ ticket.image.url }}" alt="couverture de live">
-
+                    {% endif %}
                 </div>
             <p>{{ ticket.description }}</p>
                 <div class="d-flex justify-content-center align-items-center">

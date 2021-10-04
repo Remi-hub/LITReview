@@ -1,3 +1,4 @@
+from django.http import HttpResponseForbidden
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render, redirect
 
@@ -70,6 +71,8 @@ def review_create_view_with_ticket(request, ticket_id):
 
 def delete_review_view(request, review_id):
     review = get_object_or_404(Review, id=review_id)
+    if review.user != request.user:
+        return HttpResponseForbidden()
 
     if request.method == 'GET':
         html = 'reviews/delete.html'
@@ -81,8 +84,10 @@ def delete_review_view(request, review_id):
 
 
 def edit_review_view(request, review_id,):
-
     review = get_object_or_404(Review, id=review_id)
+    if review.user != request.user:
+        return HttpResponseForbidden()
+
     ticket = review.ticket
     form_review = ReviewForm(request.POST or None, instance=review)
 
